@@ -1,0 +1,23 @@
+{
+  "name": "projeto-mfe-food-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo de Micro Front-ends para Delivery",
+  "workspaces": [
+    "container-app",
+    "menu-mfe",
+    "order-mfe"
+  ],
+  "scripts": {
+  "dev:container": "cd container-app && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev",
+  "dev:menu": "cd menu-mfe && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev -- -p 3001",
+  "dev:order": "cd order-mfe && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev -- -p 3002",
+  "dev": "concurrently \"npm run dev:container\" \"npm run dev:menu\" \"npm run dev:order\"",
+  "build": "npm run build --workspaces",
+  "test": "npm run test --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.0.0"
+  }
+}
