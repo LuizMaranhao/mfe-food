@@ -8,9 +8,9 @@ const nextConfig = {
         name: 'container',
         filename: 'static/chunks/remoteEntry.js',
         // O Container consome os remotes
-        remotes: {
-          menu: 'menu@http://localhost:3001/_next/static/chunks/remoteEntry.js',
-          order: 'order@http://localhost:3002/_next/static/chunks/remoteEntry.js',
+        remotes: { // Comente estas linhas temporariamente se o erro persistir no build
+          menu: 'menu@http://localhost:3001/_next/static/chunks/remoteEntry.js', // menu: 'menu@http://localhost:3001/remoteEntry.js',
+          order: 'order@http://localhost:3002/_next/static/chunks/remoteEntry.js', // menu: 'menu@http://localhost:3002/remoteEntry.js',
         },
         shared: {
           react: {

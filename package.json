@@ -9,15 +9,18 @@
     "order-mfe"
   ],
   "scripts": {
-  "dev:container": "cd container-app && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev",
-  "dev:menu": "cd menu-mfe && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev -- -p 3001",
-  "dev:order": "cd order-mfe && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev -- -p 3002",
-  "dev": "concurrently \"npm run dev:container\" \"npm run dev:menu\" \"npm run dev:order\"",
-  "build": "next build",
-  "test": "npm run test --workspaces"
+    "dev:container": "cd container-app && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev",
+    "dev:menu": "cd menu-mfe && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev -- -p 3001",
+    "dev:order": "cd order-mfe && set NEXT_PRIVATE_LOCAL_WEBPACK=true && npm run dev -- -p 3002",
+    "dev": "concurrently \"npm run dev:container\" \"npm run dev:menu\" \"npm run dev:order\"",
+    "build": "next build",
+    "test": "npm run test --workspaces"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.97.3"
   }
 }
