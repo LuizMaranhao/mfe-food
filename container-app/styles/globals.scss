@@ -1,0 +1,28 @@
+/* Estilo Profissional SASS */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px; /* Cardápio largo, Sacola estreita */
+  gap: 30px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+header {
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  h1 { color: #d35400; margin: 0; }
+}
