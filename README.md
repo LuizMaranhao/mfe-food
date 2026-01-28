@@ -1,30 +1,39 @@
-# 🍔 Gourmet Delivery - Micro Front-end Ecosystem
+# 🍔 MFE Food - Micro Front-ends Architecture
 
-Este é um ecossistema premium de entrega de comida desenvolvido com a arquitetura de **Micro Front-ends**. O projeto utiliza as tecnologias mais modernas do mercado para garantir escalabilidade e independência de times.
+Este é um projeto profissional desenvolvido com **Next.js 15**, focado em uma arquitetura de **Micro Front-ends (MFE)**. O objetivo é criar um ecossistema modular onde diferentes partes da aplicação (Container, Menu e Pedidos) funcionam de forma independente, mas integrada através do **Module Federation**.
 
-## 🚀 Tecnologias
-* **Next.js 15** (Core Framework)
-* **Module Federation** (Orquestração de Micro Front-ends)
-* **SASS** (Estilização Profissional)
-* **React (Hooks & Context)**
-* **Vercel** (Deployment & CI/CD)
+## 🚀 Estrutura do Projeto
 
-## 🏗️ Arquitetura do Sistema
-O projeto é dividido em três aplicações independentes:
+O repositório é um Monorepo organizado da seguinte forma:
 
-1.  **Container (Porta 3000):** O Host principal que consome os remotos e gerencia a experiência do usuário.
-2.  **Products MFE (Porta 3001):** Micro Front-end responsável pela listagem e detalhes dos produtos.
-3.  **Order MFE (Porta 3002):** Micro Front-end que gerencia a sacola de compras e lógica de pedidos.
+* **container-app (Porta 3000):** O núcleo da aplicação que consome os micro front-ends.
+* **menu-mfe (Porta 3001):** Micro front-end responsável pela exibição do cardápio.
+* **order-mfe (Porta 3002):** Micro front-end responsável pela gestão de pedidos.
 
-## 🛠️ Como executar
-```bash
-# Clone o repositório
-git clone [SEU_LINK_GITHUB]
+## 🛠️ Tecnologias Utilizadas
 
-# Instale as dependências em cada pasta e inicie
-# No Container
-cd container && npm install && npm run dev
+* **React 19** e **Next.js 15**.
+* **SASS (.scss):** Estilização profissional e modular.
+* **Module Federation:** Integração entre as aplicações via Webpack.
+* **Turbopack:** Utilizado para desenvolvimento local de alta performance.
 
-# Nos Remotos
-cd ../products && npm install && npm run dev
-cd ../order && npm install && npm run dev
+## 🏃 Como Rodar Localmente
+
+Para visualizar o projeto completo, você precisará rodar as três aplicações simultaneamente:
+
+1.  **Instale as dependências** em cada pasta:
+    ```bash
+    cd container-app && npm install
+    cd ../menu-mfe && npm install
+    cd ../order-mfe && npm install
+    ```
+
+2.  **Inicie cada serviço** (em terminais separados):
+    * No `container-app`: `npm run dev`
+    * No `menu-mfe`: `npm run dev`
+    * No `order-mfe`: `npm run dev`
+
+3.  Acesse `http://localhost:3000` para ver a aplicação integrada.
+
+---
+*Este projeto foi desenvolvido com foco em escalabilidade e performance para estratégias de tráfego pago.*
